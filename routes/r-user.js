@@ -1,4 +1,5 @@
 const express = require('express');
+const { route } = require('./r-staff');
 const userRouter = 
 
 app.get('/', (req, res) => {
@@ -28,7 +29,13 @@ app.put('/request/update', (req, res) => {
 app.delete('/request/resolve', (req, res) => {
     res.send('request resolve page');
 });
-
+ 
 app.post('/feedback', (req, res) => {
     res.send('feedback page');
+    
 });
+route.use('/',(req, res)=>{
+    res.send("Get Request for users");
+});
+module.express = userRouter;
+
